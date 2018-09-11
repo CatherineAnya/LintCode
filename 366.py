@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/26202472/45338929-5fc79b80-b5c2-11e8-9c54-2236dd5b70c1.png)
+
+
 编译器：
 class Solution:
     """
@@ -23,3 +26,8 @@ if n <= 0:
     print('输入正整数')
 else:
     print(Fibonacci(n-1))
+
+    
+    
+    
+    
