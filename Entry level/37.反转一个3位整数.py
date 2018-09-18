@@ -17,8 +17,7 @@ class Solution:
     """
     def reverseInteger(self, number):
         # write your code here
-        num = int(str(number)[::-1])
-        return num
+        return int(str(number)[::-1])
 if __name__ == '__main__':
     n = input('Enter three bit integers:')
     s = Solution()
