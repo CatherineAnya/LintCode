@@ -9,8 +9,11 @@
 # 3. 生成的斐波那契数列需要用列表来存储，考察Python列表的使用
 ############
 # 知识点：
-# 1. 
-# 2.
+# 1. 列表(list)：Python序列的内置数据类型之一，其数据项不需要具有相同的类型
+# 2. 定义列表：list1 = list() 或 list2 = []，推荐第一种方式
+# 3. list.append()：Python列表的方法，更新列表，在列表的末尾添加新的数据项
+# 4. range(startnum,endnum,step)：Python的内置函数，一个迭代器，返回一系列连续的整数列表，多在for循环中做为索引使用
+# 5. len()：Python的内置函数，返回字符串、列表、元组等对象的长度或项目个数
 class Solution:
     """
     @param n: an integer
