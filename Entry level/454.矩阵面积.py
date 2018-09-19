@@ -2,7 +2,7 @@
 # 实现一个矩阵类Rectangle
 # 包含：
 # 公有的成员变量width和height，分别代表宽度和高度
-# 构造函数，接受两个参数width和height，设定矩阵的宽度和高度
+# 构造函数，接收两个参数width和height，设定矩阵的宽度和高度
 # 成员函数getArea，返回这个矩阵的面积
 # 输入：width，height
 # 输出：矩阵的面积
