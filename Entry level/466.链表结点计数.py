@@ -34,6 +34,7 @@ class Solution:
         return count
 ############
 # Pycharm上代码
+# 创建链表->创建链表中的结点->定义计数器循环计数->返回链表结点个数
 class ListNode:
     # 创建链表结点类
     def __init__(self, val):
