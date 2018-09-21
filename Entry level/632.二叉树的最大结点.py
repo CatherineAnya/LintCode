@@ -15,12 +15,17 @@
 # 4. 二叉树的特点(二)：第i层最多有2^(i-1)个结点
 # 5. 二叉树的特点(三)：深度(层数)为k的二叉树最多有2^k-1个结点
 # 6. 二叉树的特点(四)：任何一棵二叉树，如果其终端结点个数为N0，度为2的结点个数为N2，则N0=N2+1
-# 7. 
-# 8. 
+# 7. list.pop()：Python列表的方法，删除列表中的一个元素(默认为最后一个)，返回被删除元素的值
+############
+# LintCode上代码
+# 注意：要求返回的是最大的结点，而不是最大的结点值
+"""
+Definition of TreeNode:
 class TreeNode:
     def __init__(self, val):
         self.val = val
         self.left, self.right = None, None
+"""
 class Solution:
     """
     @param: root: the root of tree
@@ -38,7 +43,9 @@ class Solution:
         self.maxNode(root.left)
         self.maxNode(root.right)
         return self.node
-    
+############
+# Pycharm上代码
+# 创建树->创建树中的结点->递归比较结点值大小->返回最大的结点值
 class TreeNode:
     # 创建结点类
     def __init__(self, val):
@@ -49,7 +56,9 @@ class Tree:
     def __init__(self):
         self.root = None
     def create(self, val):
+        # 创建树
         node = TreeNode(val)
+        # 创建结点
         if self.root is None:
             self.root = node
         else:
@@ -65,9 +74,28 @@ class Tree:
                 else:
                     queue.append(childnode.left)
                     queue.append(childnode.right)
+class Solution:
+    """
+    @param: root: the root of tree
+    @return: the max node
+    """
+    maxnum = -9999
+    node = None
+    def maxNode(self, root):
+        # write your code here
+        if root is None:
+            return None
+        if root.val > self.maxnum:
+            self.maxnum = root.val
+            self.node = root
+        self.maxNode(root.left)
+        self.maxNode(root.right)
+        return self.node.val
 if __name__ == '__main__':
     tree = Tree()
     N = int(input('Enter the number of nodes in the binary tree:'))
     for i in range(N):
         value = int(input('Enter the value of nodes in the binary tree:'))
-        print(tree.create(value))
+        tree.create(value)
+    s = Solution()
+    print(s.maxNode(tree.root))
