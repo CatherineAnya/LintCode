@@ -6,12 +6,17 @@
 # 挑战：仅使用一个if语句解决该问题
 ############
 # 题目分析：
+# 思路一：使用一个for循环和三个if语句来解决，其中被3和5整除可以看做被15整除，并且要写在第一个if语句中，防止被其余两个if语句所包含
+# 思路二：使用for循环以及字符串截取和逻辑运算符or来解决，其中仅用一个if语句把"fizzbuzz"改为"fizz buzz"即可
+# 思路三：
 ############
 # 知识点：
-# 1. 
-# 2. 
+# 1. 逻辑运算符：运算数据都为布尔类型时，逻辑运算思路相同，若运算数据中存在非布尔类型，思路就不同了
+# 2. and：布尔与，若运算数据中存在False，则返回False；否则，返回最右边数据
+# 3. or：布尔或，若运算数据中存在False，则返回另一个数据；否则，返回最左边数据
+# 4. not：布尔非，若运算数据为True，则返回False；若运算数据为False，则返回True
 ############
-# if…elif…else嵌套
+# if…elif…else语句
 class Solution:
     """
     @param n: An integer
@@ -36,3 +41,48 @@ if __name__ == '__main__':
     print(s.fizzBuzz(N))
 ############
 # 仅用一个if语句
+# 方法一：
+class Solution:
+    """
+    @param n: An integer
+    @return: A list of strings.
+    """
+    def fizzBuzz(self, n):
+        # write your code here
+        strArray = list()
+        for i in range(1, n+1):
+            strArray.append("fizz"[(i % 3) * 4::] + "buzz"[(i % 5) * 4::] or str(i))
+            if strArray[i-1] == 'fizzbuzz':
+                strArray[i-1] = 'fizz buzz'
+        return strArray
+if __name__ == '__main__':
+    N = int(input('Enter a integer:'))
+    s = Solution()
+    print(s.fizzBuzz(N))
+############
+# 方法二：
+class Solution:
+    """
+    @param n: An integer
+    @return: A list of strings.
+    """
+    def fizzBuzz(self, n):
+        # write your code here
+        # strMap = [None for i in range(15)]
+        strMap = list()
+        for i in range(15):
+            strMap.append(None)
+        strMap[0] = 'fizz buzz'
+        strMap[3] = strMap[6] = strMap[9] = strMap[12] = 'fizz'
+        strMap[5] = strMap[10] = 'buzz'
+        strArray = list()
+        for x in range(1, n+1):
+            if strMap[x % 15] is not None:
+                strArray.append(strMap[x % 15])
+            else:
+                strArray.append(str(x))
+        return strArray
+if __name__ == '__main__':
+    N = int(input('Enter a integer:'))
+    s = Solution()
+    print(s.fizzBuzz(N))
