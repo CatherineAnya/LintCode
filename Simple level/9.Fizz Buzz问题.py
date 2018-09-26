@@ -37,7 +37,7 @@ class Solution:
                 strArray.append(str(i))
         return strArray
 if __name__ == '__main__':
-    N = int(input('Enter a integer:'))
+    N = int(input('Enter an integer:'))
     s = Solution()
     print(s.fizzBuzz(N))
 ############
@@ -57,7 +57,7 @@ class Solution:
                 strArray[i-1] = 'fizz buzz'
         return strArray
 if __name__ == '__main__':
-    N = int(input('Enter a integer:'))
+    N = int(input('Enter an integer:'))
     s = Solution()
     print(s.fizzBuzz(N))
 ############
@@ -84,6 +84,6 @@ class Solution:
                 strArray.append(str(x))
         return strArray
 if __name__ == '__main__':
-    N = int(input('Enter a integer:'))
+    N = int(input('Enter an integer:'))
     s = Solution()
     print(s.fizzBuzz(N))
