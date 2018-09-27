@@ -1,4 +1,30 @@
-# 68ms
+# 101ms
+class Solution:
+    """
+    @param A: sorted integer array A
+    @param B: sorted integer array B
+    @return: A new sorted integer array
+    """
+    def mergeSortedArray(self, A, B):
+        # write your code here
+        len1 = len(A)
+        len2 = len(B)
+        i, j = 0, 0
+        C = list()
+        while i < len1 and j < len2:
+            if A[i] < B[j]:
+                C.append(A[i])
+                i += 1
+            else:
+                C.append(B[j])
+                j += 1
+        if i < len1:
+            C.extend(A[i:])
+        if j < len2:
+            C.extend(B[j:])
+        return C
+
+# 61ms
 class Solution:
     """
     @param A: sorted integer array A
