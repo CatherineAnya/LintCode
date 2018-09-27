@@ -23,7 +23,7 @@ if __name__ == '__main__':
     s = Solution()
     print(s.rotateString(charArray, o))
 
-# 701ms
+# 704ms
 class Solution:
     """
     @param str: An array of char
@@ -44,4 +44,25 @@ class Solution:
         del str[:]
         str.extend(list2)
         str.extend(list1)
+        return str
+
+# 406ms
+class Solution:
+    """
+    @param str: An array of char
+    @param offset: An integer
+    @return: nothing
+    """
+    def rotateString(self, str, offset):
+        # write your code here
+        length = len(str)
+        if length == 0:
+            return str
+        offset = offset % length
+        value = length - offset
+        if offset == 0:
+            return str
+        list1 = str[:value]
+        list2 = str[value:]
+        str[:] = list2 + list1
         return str
