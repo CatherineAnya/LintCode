@@ -16,3 +16,19 @@ class Solution:
             return True
         else:
             return False
+# 不是用循环
+import math
+class Solution:
+    """
+    @param n: an integer
+    @return: if n is a power of three
+    """
+    def isPowerOfThree(self, n):
+        # Write your code here
+        if n <= 0:
+            return False
+        n = math.log10(n) / math.log10(3)
+        if n % 1 == 0:
+            return True
+        else:
+            return False
