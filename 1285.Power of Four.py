@@ -26,7 +26,7 @@ class Solution:
             return True
         else:
             return False
-# 不使用循环
+# 不使用循环：151ms，比上面的代码慢
 import math
 class Solution:
     """
